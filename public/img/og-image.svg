@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1200" height="18.9" fill="#6F4E37"/>
+  <circle cx="600" cy="277.2" r="226.79999999999998" fill="#D9C7B5" opacity="0.35"/>
+  
+  <g fill="none" stroke="#6F4E37" stroke-width="18.9" stroke-linecap="round">
+    <path d="M 467.70000000000005 220.5 h 264.59999999999997 v 107.10000000000001 a 69.3 69.3 0 0 1 -132.29999999999998 63 h -0 a 69.3 69.3 0 0 1 -132.29999999999998 -63 z" fill="#6F4E37" stroke="none"/>
+    <path d="M 732.3 252 a 50.4 50.4 0 1 1 0 88.2"/>
+    <path d="M 555.9 170.09999999999997 q 15.75 -31.5 0 -56.699999999999996"/>
+    <path d="M 618.9 170.09999999999997 q 15.75 -31.5 0 -56.699999999999996"/>
+    <line x1="442.5" y1="384.3" x2="757.5" y2="384.3"/>
+  </g>
+  <text x="600" y="516.6" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="47.25" fill="#2B2622">Shibui Café</text>
+  <text x="600" y="567" text-anchor="middle" font-family="Arial, sans-serif" font-size="23.939999999999998" fill="#4A3525">Café de especialidad y tienda online</text>
+</svg>

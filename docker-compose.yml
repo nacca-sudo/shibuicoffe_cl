@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: shibui_shop_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shibui_shop
+    ports:
+      - "5433:5432"
+    volumes:
+      - shibui_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d shibui_shop"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  shibui_pgdata:

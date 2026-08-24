@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#F3EDE4"/>
+  <rect x="0" y="0" width="800" height="24" fill="#6F4E37"/>
+  <circle cx="400" cy="352" r="288" fill="#D9C7B5" opacity="0.35"/>
+  
+  <g fill="none" stroke="#6F4E37" stroke-width="24" stroke-linecap="round">
+    <path d="M 232 280 h 336 v 136 a 88 88 0 0 1 -168 80 h -0 a 88 88 0 0 1 -168 -80 z" fill="#6F4E37" stroke="none"/>
+    <path d="M 568 320 a 64 64 0 1 1 0 112.00000000000001"/>
+    <path d="M 344 216 q 20 -40 0 -72"/>
+    <path d="M 424 216 q 20 -40 0 -72"/>
+    <line x1="200" y1="488" x2="600" y2="488"/>
+  </g>
+  <text x="400" y="656" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="60" fill="#2B2622">Polera</text>
+  <text x="400" y="720" text-anchor="middle" font-family="Arial, sans-serif" font-size="30.4" fill="#4A3525">Shibui Café</text>
+</svg>

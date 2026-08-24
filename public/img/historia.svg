@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="800" height="18" fill="#6F4E37"/>
+  <circle cx="400" cy="264" r="216" fill="#D9C7B5" opacity="0.35"/>
+  
+  <g transform="rotate(-25 400 252)">
+    <ellipse cx="400" cy="252" rx="80.64" ry="115.92" fill="#6F4E37"/>
+    <path d="M 400 146.16000000000003 q -55.44 115.92 0 211.67999999999998" fill="none" stroke="#FAF7F2" stroke-width="17.64" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="491.99999999999994" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="45" fill="#2B2622">Nuestra historia</text>
+  <text x="400" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="22.8" fill="#4A3525">Desde 2021</text>
+</svg>

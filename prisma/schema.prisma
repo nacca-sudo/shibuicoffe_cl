@@ -1,0 +1,134 @@
+// Shibui Café — modelo de datos
+// Precios en CLP como enteros (Int): CLP no tiene decimales, evita errores de float.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  PREPARING
+  SHIPPED
+  READY_FOR_PICKUP
+  COMPLETED
+  PAYMENT_FAILED
+  CANCELLED
+  REFUNDED
+}
+
+enum DeliveryMethod {
+  PICKUP
+  SHIPPING
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  image    String?
+  products Product[]
+}
+
+model Product {
+  id          String           @id @default(cuid())
+  name        String
+  slug        String           @unique
+  description String
+  basePrice   Int // CLP; precio de referencia/mínimo — el precio real de venta está en la variante
+  images      String[]
+  isActive    Boolean          @default(true)
+  categoryId  String
+  category    Category         @relation(fields: [categoryId], references: [id])
+  variants    ProductVariant[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([categoryId])
+}
+
+model ProductVariant {
+  id         String      @id @default(cuid())
+  productId  String
+  product    Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name       String // Etiqueta legible: "250 g molido", "Talla M"
+  sku        String      @unique
+  price      Int // CLP — precio de venta real de esta variante
+  stock      Int         @default(0) // Solo se descuenta aquí (al confirmar el pago)
+  attributes Json // Flexible: { gramaje, molienda } en café, { talla, color } en poleras
+  isActive   Boolean     @default(true)
+  orderItems OrderItem[]
+
+  @@index([productId])
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String? // Null si entra solo con OAuth
+  role         Role      @default(CUSTOMER)
+  orders       Order[]
+  addresses    Address[]
+  createdAt    DateTime  @default(now())
+}
+
+model Order {
+  id                String         @id @default(cuid())
+  userId            String? // Nullable: soporta compra como invitado
+  user              User?          @relation(fields: [userId], references: [id])
+  guestEmail        String?
+  guestName         String?
+  guestPhone        String?
+  status            OrderStatus    @default(PENDING_PAYMENT)
+  total             Int // CLP — congelado al crear el pedido, nunca se recalcula
+  shippingCost      Int            @default(0) // CLP
+  deliveryMethod    DeliveryMethod
+  shippingAddressId String?
+  shippingAddress   Address?       @relation(fields: [shippingAddressId], references: [id])
+  items             OrderItem[]
+  paymentProvider   String? // "flow" / "mercadopago" — permite cambiar de pasarela sin migrar
+  paymentId         String?        @unique // ID en la pasarela; clave de idempotencia del webhook
+  createdAt         DateTime       @default(now())
+  paidAt            DateTime?
+
+  @@index([userId])
+  @@index([status])
+}
+
+model OrderItem {
+  id          String         @id @default(cuid())
+  orderId     String
+  order       Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variantId   String
+  variant     ProductVariant @relation(fields: [variantId], references: [id])
+  quantity    Int
+  unitPrice   Int // CLP — snapshot: el pedido no cambia aunque el producto se edite después
+  productName String
+  variantName String
+
+  @@index([orderId])
+}
+
+model Address {
+  id      String  @id @default(cuid())
+  userId  String? // Nullable: direcciones capturadas en checkout de invitado
+  user    User?   @relation(fields: [userId], references: [id])
+  street  String
+  number  String
+  comuna  String
+  ciudad  String
+  region  String
+  notes   String? // "Depto 302", indicaciones al repartidor
+  orders  Order[]
+}

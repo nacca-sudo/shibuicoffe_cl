@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1600" height="27" fill="#6F4E37"/>
+  <circle cx="800" cy="396" r="324" fill="#D9C7B5" opacity="0.35"/>
+  
+  <g fill="none" stroke="#6F4E37" stroke-width="27" stroke-linecap="round">
+    <path d="M 611 315 h 378 v 153 a 99 99 0 0 1 -189 90 h -0 a 99 99 0 0 1 -189 -90 z" fill="#6F4E37" stroke="none"/>
+    <path d="M 989 360 a 72 72 0 1 1 0 126.00000000000001"/>
+    <path d="M 737 243 q 22.5 -45 0 -81"/>
+    <path d="M 827 243 q 22.5 -45 0 -81"/>
+    <line x1="575" y1="549" x2="1025" y2="549"/>
+  </g>
+  <text x="800" y="738" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="67.5" fill="#2B2622">Shibui Café</text>
+  <text x="800" y="810" text-anchor="middle" font-family="Arial, sans-serif" font-size="34.199999999999996" fill="#4A3525">Café de especialidad · Santiago</text>
+</svg>
