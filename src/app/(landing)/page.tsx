@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/utils";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
-  name: "Shibui Café",
+  name: "Shibui Coffee",
   description:
     "Cafetería de especialidad en Santiago de Chile. Café de origen, métodos filtrados y pastelería.",
   url: SITE_URL,
@@ -18,7 +18,7 @@ const jsonLd = {
   email: "hola@shibuicafe.cl",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "José Miguel de la Barra 456",
+    streetAddress: "Av. Alameda Libertador Bernardo O'Higgins 333",
     addressLocality: "Santiago",
     addressRegion: "Región Metropolitana",
     addressCountry: "CL",
@@ -26,25 +26,14 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "19:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "09:00",
-      closes: "15:00",
-    },
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "11:30",
+      closes: "19:30",
+    }
+
   ],
   servesCuisine: "Café de especialidad",
-  priceRange: "$$",
+  priceRange: "$5000-$10000",
 };
 
 export default function LandingPage() {

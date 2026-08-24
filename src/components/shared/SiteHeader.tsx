@@ -17,7 +17,7 @@ export default function SiteHeader() {
     <header className="site-header">
       <div className="site-header__inner">
         <Link href="/" className="site-logo">
-          Shibui Café
+          Shibui Coffee
         </Link>
         <nav className="site-nav" aria-label="Navegación principal">
           {NAV_LINKS.map((link) => (

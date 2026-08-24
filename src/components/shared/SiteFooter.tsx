@@ -2,14 +2,14 @@ import Link from "next/link";
 
 // Datos de contacto placeholder — actualizar con los datos reales del negocio
 const CONTACTO = {
-  direccion: "José Miguel de la Barra 456, Santiago Centro",
+  direccion: "Av. Alameda Libertador Bernardo O'Higgins 333, Santiago",
   email: "hola@shibuicafe.cl",
   telefono: "+56 9 1234 5678",
 };
 
 const REDES = [
-  { href: "https://instagram.com/shibuicafe", label: "Instagram" },
-  { href: "https://facebook.com/shibuicafe", label: "Facebook" },
+  { href: "https://instagram.com/shibui_coffee", label: "Instagram" },
+
 ];
 
 export default function SiteFooter() {
@@ -18,7 +18,7 @@ export default function SiteFooter() {
       <div className="contenedor">
         <div className="site-footer__grid">
           <div>
-            <h4>Shibui Café</h4>
+            <h4>Shibui Coffee</h4>
             <p>
               Café de especialidad en Santiago de Chile. Tostamos, preparamos y
               compartimos café con calma, a la manera japonesa.
@@ -55,7 +55,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="site-footer__legal">
-          <span>© {new Date().getFullYear()} Shibui Café. Todos los derechos reservados.</span>
+          <span>© {new Date().getFullYear()} Shibui Coffee. Todos los derechos reservados.</span>
           <span>Santiago de Chile</span>
         </div>
       </div>

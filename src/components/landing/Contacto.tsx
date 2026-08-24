@@ -1,6 +1,6 @@
 "use client";
 
-import { MailOutlined, PhoneOutlined, InstagramOutlined, FacebookOutlined } from "@ant-design/icons";
+import { MailOutlined, PhoneOutlined, InstagramOutlined } from "@ant-design/icons";
 
 // Datos placeholder claramente editables
 const EMAIL = "hola@shibuicafe.cl";
@@ -20,18 +20,13 @@ export default function Contacto() {
           <span style={{ margin: "0 16px" }}>·</span>
           <PhoneOutlined style={{ marginRight: 8 }} />
           <a href={`tel:${TELEFONO.replace(/\s/g, "")}`}>{TELEFONO}</a>
-        </p>
-        <p style={{ fontSize: "1.1rem" }}>
-          <InstagramOutlined style={{ marginRight: 8 }} />
-          <a href="https://instagram.com/shibuicafe" target="_blank" rel="noopener noreferrer">
-            @shibuicafe
-          </a>
           <span style={{ margin: "0 16px" }}>·</span>
-          <FacebookOutlined style={{ marginRight: 8 }} />
-          <a href="https://facebook.com/shibuicafe" target="_blank" rel="noopener noreferrer">
-            Shibui Café
+          <InstagramOutlined style={{ marginRight: 8 }} />
+          <a href="https://instagram.com/shibui_coffee" target="_blank" rel="noopener noreferrer">
+            @shibui_coffee
           </a>
         </p>
+
       </div>
     </section>
   );

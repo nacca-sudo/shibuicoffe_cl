@@ -20,15 +20,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Shibui Café — Café de especialidad en Santiago",
-    template: "%s | Shibui Café",
+    default: "Shibui Coffee — Café de especialidad en Santiago",
+    template: "%s | Shibui Coffee",
   },
   description:
     "Cafetería de especialidad en Santiago de Chile. Café de origen, métodos filtrados, pastelería y tienda online: granos, tazas, poleras y accesorios.",
   openGraph: {
     type: "website",
     locale: "es_CL",
-    siteName: "Shibui Café",
+    siteName: "Shibui Coffee",
     images: ["/img/og-image.svg"],
   },
 };
@@ -43,9 +43,10 @@ export default function RootLayout({
           <ConfigProvider
             theme={{
               token: {
-                colorPrimary: "#6F4E37",
-                colorBgLayout: "#FAF7F2",
-                colorText: "#2B2622",
+                colorPrimary: "#495057",    /* Gris medio oscuro para botones primarios y enlaces */
+                colorBgLayout: "#F8F9FA",   /* Gris muy claro para el fondo principal */
+                colorText: "#212529",       /* Gris muy oscuro / negro suave para el texto */
+                colorBorder: "#DEE2E6",     /* Gris claro para bordes de componentes */
                 borderRadius: 8,
                 fontFamily: "var(--font-inter), Arial, sans-serif",
               },

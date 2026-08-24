@@ -1,10 +1,10 @@
 :root {
-  --crema: #faf7f2;
-  --crema-oscuro: #f3ede4;
-  --cafe: #6f4e37;
-  --cafe-oscuro: #4a3525;
-  --texto: #2b2622;
-  --acento: #d9c7b5;
+  --crema: #f8f9fa;         /* Fondo principal: blanco/gris muy claro */
+  --crema-oscuro: #e9ecef;  /* Fondo alternativo: gris claro suave */
+  --cafe: #495057;          /* Acento primario / enlaces: gris medio oscuro */
+  --cafe-oscuro: #343a40;   /* Texto secundario / contrastes: gris oscuro */
+  --texto: #212529;         /* Texto principal: negro suave / gris muy oscuro */
+  --acento: #dee2e6;        /* Bordes y separadores: gris claro neutro */
   --max-ancho: 1200px;
 }
 
@@ -45,11 +45,12 @@ a {
 }
 
 /* ── Header ─────────────────────────────────────────────── */
+/* Cambiar de: rgba(250, 247, 242, 0.92) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(248, 249, 250, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--acento);
 }
@@ -137,10 +138,11 @@ a {
   flex-wrap: wrap;
 }
 
+/* Cambiar de: rgba(43, 38, 34, 0.12) */
 .hero__imagen {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(43, 38, 34, 0.12);
+  box-shadow: 0 16px 40px rgba(33, 37, 41, 0.10);
 }
 
 .dos-columnas {
