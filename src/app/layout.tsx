@@ -20,15 +20,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Shibui Café — Café de especialidad en Santiago",
-    template: "%s | Shibui Café",
+    default: "Shibui Coffee — Café de especialidad en Santiago",
+    template: "%s | Shibui Coffee",
   },
   description:
     "Cafetería de especialidad en Santiago de Chile. Café de origen, métodos filtrados, pastelería y tienda online: granos, tazas, poleras y accesorios.",
   openGraph: {
     type: "website",
     locale: "es_CL",
-    siteName: "Shibui Café",
+    siteName: "Shibui Coffee",
     images: ["/img/og-image.svg"],
   },
 };
