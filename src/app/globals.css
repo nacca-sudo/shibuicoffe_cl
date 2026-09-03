@@ -163,40 +163,132 @@ a {
   gap: 16px;
 }
 
-.menu-grupo {
-  margin-bottom: 40px;
+/* ── Menú PDF ───────────────────────────────────────────── */
+.menu-pdf {
+  text-align: center;
+  max-width: 640px;
 }
 
-.menu-grupo h3 {
-  font-size: 1.4rem;
-  border-bottom: 2px solid var(--acento);
-  padding-bottom: 8px;
-  margin: 0 0 16px;
+.menu-pdf__texto {
+  color: var(--cafe-oscuro);
+  margin: 0 0 24px;
 }
 
-.menu-item {
+.menu-pdf__nota {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--cafe-oscuro);
+}
+
+/* ── Eventos ────────────────────────────────────────────── */
+.eventos-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.eventos-calendario {
+  background: #fff;
+  border: 1px solid var(--acento);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.celda-calendario {
+  text-align: center;
+  border-radius: 8px;
+  padding: 2px 0;
+}
+
+.celda-calendario--hoy {
+  background: var(--crema-oscuro);
+  font-weight: 700;
+}
+
+.ant-picker-cell-selected .celda-calendario {
+  background: rgba(73, 80, 87, 0.15);
+}
+
+.celda-calendario__puntos {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+  min-height: 6px;
+  margin-top: 2px;
+}
+
+.celda-calendario__punto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cafe);
+}
+
+.eventos-agenda h3 {
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.evento-item {
+  display: flex;
   gap: 16px;
-  padding: 10px 0;
+  padding: 14px 0;
   border-bottom: 1px dashed var(--acento);
 }
 
-.menu-item__nombre {
+.evento-item:last-child {
+  border-bottom: none;
+}
+
+.evento-item__fecha {
+  flex: 0 0 56px;
+  height: 56px;
+  background: #fff;
+  border: 1px solid var(--acento);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.evento-item__dia {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.evento-item__mes {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--cafe);
+}
+
+.evento-item__titulo {
   font-weight: 600;
 }
 
-.menu-item__descripcion {
+.evento-item__detalle {
+  font-size: 0.85rem;
+  color: var(--cafe);
+  margin: 2px 0;
+  text-transform: capitalize;
+}
+
+.evento-item__descripcion {
   font-size: 0.9rem;
   color: var(--cafe-oscuro);
-  margin: 2px 0 0;
+  margin: 0;
 }
 
-.menu-item__precio {
-  font-weight: 600;
-  color: var(--cafe);
-  white-space: nowrap;
+.evento-modal-item {
+  margin-bottom: 16px;
+}
+
+.evento-modal-item p {
+  margin: 4px 0 0;
+  color: var(--cafe-oscuro);
 }
 
 .mapa-frame {
@@ -313,7 +405,7 @@ a {
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .hero, .dos-columnas, .ficha {
+  .hero, .dos-columnas, .ficha, .eventos-grid {
     grid-template-columns: 1fr;
   }
 

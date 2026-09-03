@@ -10,7 +10,7 @@ const FOTOS = [
 
 export default function Galeria() {
   return (
-    <section id="galeria" className="seccion seccion--alterna">
+    <section id="galeria" className="seccion">
       <div className="contenedor">
         <h2 className="seccion__titulo">El espacio</h2>
         <p className="seccion__subtitulo">
