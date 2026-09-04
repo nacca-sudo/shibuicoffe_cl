@@ -8,7 +8,7 @@ const TELEFONO = "+56 9 1234 5678";
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="seccion seccion--alterna">
+    <section id="contacto" className="seccion">
       <div className="contenedor" style={{ textAlign: "center" }}>
         <h2 className="seccion__titulo">Contacto</h2>
         <p className="seccion__subtitulo">

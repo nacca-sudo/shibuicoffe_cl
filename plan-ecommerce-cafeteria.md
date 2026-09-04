@@ -229,10 +229,11 @@ Justificación:
 
 1. **Hero**: foto principal, nombre, propuesta de valor, CTAs "Ver menú" y "Visitar tienda".
 2. **Historia**: texto + fotos del local/origen.
-3. **Menú de la cafetería**: bebidas y comida de la tienda física. *Contenido estático en el código (un archivo de datos) — no requiere DB ni CRUD; cambia poco y lo edita el equipo técnico. (Si el cliente quiere editarlo solo, se migra a DB en una fase posterior — decisión abierta.)*
-4. **Galería**: grid de fotos optimizadas con `next/image`.
-5. **Ubicación y horarios**: mapa embebido (Google Maps iframe — simple y gratis) + dirección + horario de atención.
-6. **Contacto y redes**: email, teléfono/WhatsApp, Instagram/Facebook. Formulario de contacto opcional (envío por email vía Resend) o solo mailto para la v1.
+3. **Menú de la cafetería**: **PDF descargable** (decisión del cliente: el menú no se muestra renderizado en la página). La sección lleva solo un texto breve y el botón de descarga a `public/menu-shibui.pdf` — placeholder generado con `scripts/generate-menu-pdf.mjs` hasta recibir el PDF real.
+4. **Próximos eventos**: sección en forma de calendario (antd Calendar) con las actividades de la cafetería (catas, talleres, música en vivo). Días con eventos marcados con puntos; al seleccionar un día se abre el detalle. Se complementa con una agenda en lista (server-rendered). Datos estáticos en `src/lib/data/eventos.ts`, migrables a DB + CRUD admin en Fase 4 si el cliente quiere editarlos solo.
+5. **Galería**: carrusel de fotos (antd Carousel con flechas, puntos y swipe táctil) con imágenes optimizadas vía `next/image`.
+6. **Ubicación y horarios**: mapa embebido (Google Maps iframe — simple y gratis) + dirección + horario de atención.
+7. **Contacto y redes**: email, teléfono/WhatsApp, Instagram/Facebook. Formulario de contacto opcional (envío por email vía Resend) o solo mailto para la v1.
 
 ### 4.2 Conexión con el ecommerce
 

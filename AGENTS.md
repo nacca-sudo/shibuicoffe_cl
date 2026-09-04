@@ -14,10 +14,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Ecommerce para cafetería (Next.js App Router). Fases 0 y 1 completadas: setup, landing y catálogo con ficha. Pendiente: carrito (Fase 2), pagos (Fase 3), auth/admin (Fase 4), endurecimiento (Fase 5). Ver `plan-ecommerce-cafeteria.md` en la raíz.
 
+Landing: el menú de la cafetería es un **PDF descargable** (`public/menu-shibui.pdf`, placeholder regenerable con `node scripts/generate-menu-pdf.mjs`), no se renderiza en página. La sección **Eventos** (`/#eventos`) usa antd Calendar con datos estáticos en `src/lib/data/eventos.ts`. Locale antd en español: `esES` + `dayjs.locale("es")` en el root layout.
+
 ## Stack y comandos
 
 - Next.js 16 (Turbopack) + TypeScript strict + ESLint. **Sin Tailwind**: estilos con Ant Design 6 + `src/app/globals.css`.
-- Ant Design con tema de marca en `src/app/layout.tsx` (ConfigProvider: café `#6F4E37`, crema `#FAF7F2`, texto `#2B2622`).
+- Ant Design con tema de marca en `src/app/layout.tsx` (ConfigProvider: primario `#495057`, fondo `#F8F9FA`, texto `#212529`).
 - Prisma **6** (fijado a propósito: Prisma 7 exige driver adapters, dependencias fuera del alcance aprobado). Seed: `package.json#prisma.seed`.
 - PostgreSQL 16 en Docker (`docker compose up -d`), **puerto host 5433** (el 5432 está ocupado por otro proyecto en esta máquina).
 

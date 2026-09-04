@@ -4,6 +4,7 @@ import { Button } from "antd";
 const NAV_LINKS = [
   { href: "/#historia", label: "Historia" },
   { href: "/#menu", label: "Menú" },
+  { href: "/#eventos", label: "Eventos" },
   { href: "/#ubicacion", label: "Ubicación" },
   { href: "/#contacto", label: "Contacto" },
 ];

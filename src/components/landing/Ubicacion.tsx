@@ -7,7 +7,7 @@ const HORARIOS = [
 
 export default function Ubicacion() {
   return (
-    <section id="ubicacion" className="seccion">
+    <section id="ubicacion" className="seccion seccion--alterna">
       <div className="contenedor">
         <h2 className="seccion__titulo">Ubicación y horarios</h2>
         <p className="seccion__subtitulo">Te esperamos!</p>
