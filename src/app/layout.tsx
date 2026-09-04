@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
+import esES from "antd/locale/es_ES";
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 import { SITE_URL } from "@/lib/utils";
+
+// Locale global para componentes antd (calendario, paginación, etc.)
+dayjs.locale("es");
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -41,6 +47,7 @@ export default function RootLayout({
       <body>
         <AntdRegistry>
           <ConfigProvider
+            locale={esES}
             theme={{
               token: {
                 colorPrimary: "#495057",    /* Gris medio oscuro para botones primarios y enlaces */

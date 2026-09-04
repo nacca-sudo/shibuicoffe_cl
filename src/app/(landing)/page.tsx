@@ -1,6 +1,7 @@
 import Hero from "@/components/landing/Hero";
 import Historia from "@/components/landing/Historia";
-import MenuCafeteria from "@/components/landing/MenuCafeteria";
+import MenuPdf from "@/components/landing/MenuPdf";
+import Eventos from "@/components/landing/Eventos";
 import Galeria from "@/components/landing/Galeria";
 import Ubicacion from "@/components/landing/Ubicacion";
 import Contacto from "@/components/landing/Contacto";
@@ -45,7 +46,8 @@ export default function LandingPage() {
       />
       <Hero />
       <Historia />
-      <MenuCafeteria />
+      <MenuPdf />
+      <Eventos />
       <Galeria />
       <Ubicacion />
       <Contacto />

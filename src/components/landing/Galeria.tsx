@@ -1,4 +1,4 @@
-import Image from "next/image";
+import GaleriaCarousel from "./GaleriaCarousel";
 
 // TODO(fase-5): reemplazar placeholders por fotos reales
 const FOTOS = [
@@ -10,26 +10,13 @@ const FOTOS = [
 
 export default function Galeria() {
   return (
-    <section id="galeria" className="seccion seccion--alterna">
+    <section id="galeria" className="seccion">
       <div className="contenedor">
         <h2 className="seccion__titulo">El espacio</h2>
         <p className="seccion__subtitulo">
           Un rincón tranquilo en el centro de Santiago.
         </p>
-        <div className="galeria-grid">
-          {FOTOS.map((foto) => (
-            <div key={foto.src} className="imagen-redondeada">
-              <Image
-                src={foto.src}
-                alt={foto.alt}
-                width={600}
-                height={600}
-                unoptimized
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
-          ))}
-        </div>
+        <GaleriaCarousel fotos={FOTOS} />
       </div>
     </section>
   );
