@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Button, InputNumber, Radio, Tooltip, Typography } from "antd";
+import { Button, InputNumber, Radio, Typography } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import { useCarrito } from "@/lib/cart/store";
 import { formatCLP } from "@/lib/utils";
 
 export type VarianteSeleccionable = {
@@ -12,19 +13,47 @@ export type VarianteSeleccionable = {
   stock: number;
 };
 
+/** Datos de display del producto para el ítem del carrito */
+export type ProductoResumen = {
+  nombre: string;
+  slug: string;
+  imagen: string;
+};
+
 export default function VariantSelector({
   variantes,
+  producto,
 }: {
   variantes: VarianteSeleccionable[];
+  producto: ProductoResumen;
 }) {
   const [varianteId, setVarianteId] = useState<string | undefined>(variantes[0]?.id);
   const [cantidad, setCantidad] = useState(1);
+  const agregar = useCarrito((estado) => estado.agregar);
+  const abrirDrawer = useCarrito((estado) => estado.abrirDrawer);
 
   const variante = variantes.find((v) => v.id === varianteId);
 
   if (!variante) {
     return <Typography.Text type="secondary">Sin stock</Typography.Text>;
   }
+
+  const agregarAlCarrito = () => {
+    if (variante.stock === 0) return;
+    agregar(
+      {
+        variantId: variante.id,
+        productSlug: producto.slug,
+        productName: producto.nombre,
+        variantName: variante.name,
+        unitPrice: variante.price,
+        image: producto.imagen,
+        quantity: cantidad,
+      },
+      variante.stock,
+    );
+    abrirDrawer();
+  };
 
   return (
     <div>
@@ -63,14 +92,15 @@ export default function VariantSelector({
           onChange={(valor) => setCantidad(valor ?? 1)}
           disabled={variante.stock === 0}
         />
-        {/* Fase 2: habilitar cuando exista el carrito */}
-        <Tooltip title="Disponible próximamente">
-          <span>
-            <Button type="primary" size="large" icon={<ShoppingCartOutlined />} disabled>
-              Agregar al carrito
-            </Button>
-          </span>
-        </Tooltip>
+        <Button
+          type="primary"
+          size="large"
+          icon={<ShoppingCartOutlined />}
+          disabled={variante.stock === 0}
+          onClick={agregarAlCarrito}
+        >
+          Agregar al carrito
+        </Button>
       </div>
     </div>
   );

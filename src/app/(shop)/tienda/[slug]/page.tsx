@@ -80,6 +80,11 @@ export default async function ProductoPage({ params }: { params: Params }) {
                 price: v.price,
                 stock: v.stock,
               }))}
+              producto={{
+                nombre: producto.name,
+                slug: producto.slug,
+                imagen: producto.images[0] ?? "/img/producto-cafe.svg",
+              }}
             />
           </div>
         </div>
