@@ -118,7 +118,8 @@ a {
   grid-template-columns: 1.1fr 1fr;
   gap: 48px;
   align-items: center;
-  padding: 64px 0;
+  /* padding lateral explícito: .hero sobrescribe el padding de .contenedor */
+  padding: 64px 24px;
 }
 
 .hero h1 {
@@ -157,10 +158,14 @@ a {
   overflow: hidden;
 }
 
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+.galeria-carousel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.galeria-carousel__slide {
+  position: relative;
+  aspect-ratio: 3 / 2;
 }
 
 /* ── Menú PDF ───────────────────────────────────────────── */
@@ -409,8 +414,14 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero {
+    padding: 48px 24px;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero__ctas {
+    justify-content: center;
   }
 
   .site-footer__grid {
