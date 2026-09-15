@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "antd";
+import CartButton from "@/components/shop/CartButton";
 
 const NAV_LINKS = [
   { href: "/#historia", label: "Historia" },
@@ -11,9 +12,9 @@ const NAV_LINKS = [
 
 /**
  * Header compartido entre landing y tienda.
- * En Fase 2 la tienda agregará aquí el ícono de carrito con badge.
+ * La landing no muestra carrito; la tienda pasa `conCarrito` (ver plan §4.2).
  */
-export default function SiteHeader() {
+export default function SiteHeader({ conCarrito = false }: { conCarrito?: boolean }) {
   return (
     <header className="site-header">
       <div className="site-header__inner">
@@ -29,6 +30,7 @@ export default function SiteHeader() {
           <Link href="/tienda">
             <Button type="primary">Tienda</Button>
           </Link>
+          {conCarrito && <CartButton />}
         </nav>
       </div>
     </header>
